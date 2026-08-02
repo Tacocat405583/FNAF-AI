@@ -14,7 +14,7 @@ class Perceptron:
         sum = 0
 
         for i in range(len(self.weights)):
-             sum += inputs * self.weights[i]
+             sum += inputs[i] * self.weights[i]
 
         return self.activate(sum)
 
@@ -42,7 +42,7 @@ if __name__ == "__main__":
     p = Perceptron(3)
     print(p.check())
 
-    inputs = [25,22]
+    inputs = [25.0,22.0]
 
     guess = p.forward(inputs=inputs)
 
