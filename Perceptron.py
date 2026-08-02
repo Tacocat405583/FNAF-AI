@@ -4,9 +4,9 @@ class Perceptron:
     def __init__(self,n):
 
         self.weights = []
+        self.learningConstant = .01
 
         for i in range(n):
-
             self.weights.append(random.uniform(-1,1))
 
     def forward(self,inputs:list):
@@ -29,6 +29,16 @@ class Perceptron:
         """
 
         return -1 if value < 0 else value
+
+
+    def train(self,inputs,desired):
+        guess = self.forward(inputs=inputs)
+        error = desired = guess
+
+        for i in range(len(self.weights)):
+            self.weights[i] = self.weights[i] + error * inputs[i] * self.learningConstant
+
+            
 
 
     def check(self):
