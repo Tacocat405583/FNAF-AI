@@ -18,9 +18,9 @@ print("cartridge",pyboy.cartridge_title)
 
 #1680
 
-#Load file
-# with open("state_file.state","rb") as f:
-#     pyboy.load_state(f)
+##Load file
+with open("state_file.state","rb") as f:
+    pyboy.load_state(f)
 
 #Save file
 # with open("state_file.state","rb") as f:
@@ -47,9 +47,11 @@ while pyboy.tick():
 pil_image.save('screenshot.png')
 
 
-#Save state
-with open("state_file.state","wb") as f:
-    pyboy.save_state(f)
+
+# --- UNCOMMENT IF YOU ARE UPDATING THE STATE ---
+# #Save state
+# with open("state_file.state","wb") as f:
+#     pyboy.save_state(f)
 
 pyboy.stop()
 
